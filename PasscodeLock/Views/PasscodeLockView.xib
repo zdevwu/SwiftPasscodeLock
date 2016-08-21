@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PasscodeLockViewController" customModule="PasscodeLock" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="etg-x7-Mx1" id="ckg-NT-1rx"/>
+                <outlet property="customImageView" destination="chh-VR-PhS" id="a1n-G0-DGN"/>
                 <outlet property="deleteSignButton" destination="H78-kl-y6L" id="kHt-em-QUT"/>
                 <outlet property="descriptionLabel" destination="HbT-GO-CPk" id="gtS-ky-zzI"/>
                 <outlet property="placeholdersX" destination="Wqo-IM-yCU" id="8td-lh-XMA"/>
@@ -401,6 +402,13 @@
                         <action selector="touchIDButtonTap:" destination="-1" eventType="touchUpInside" id="MT9-Ev-GsW"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="chh-VR-PhS">
+                    <rect key="frame" x="200" y="37" width="200" height="74"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="74" id="bjg-2F-XKg"/>
+                        <constraint firstAttribute="width" constant="200" id="hcd-sv-AMY"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -423,8 +431,8 @@
                 <constraint firstItem="PbJ-Y8-MMf" firstAttribute="centerX" secondItem="C9Z-3u-ohd" secondAttribute="centerX" id="R1h-wb-tm1"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="16" id="RDw-W3-MpZ"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RgV-eT-vCl"/>
-                <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="STC-Oe-YVu"/>
                 <constraint firstItem="0CR-0R-0Nr" firstAttribute="top" secondItem="PbJ-Y8-MMf" secondAttribute="bottom" constant="10" id="Sah-YV-A2O"/>
+                <constraint firstItem="chh-VR-PhS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="37" id="Sbz-XI-hTN"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VMo-hv-2qR"/>
                 <constraint firstItem="PbJ-Y8-MMf" firstAttribute="top" secondItem="C9Z-3u-ohd" secondAttribute="bottom" constant="10" id="Vo4-YP-n8O"/>
                 <constraint firstItem="HcN-lo-9Jb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wqo-IM-yCU"/>
@@ -433,6 +441,7 @@
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="16" id="bR1-VP-TdA"/>
                 <constraint firstItem="EUD-XB-0CR" firstAttribute="centerX" secondItem="WDx-aD-wJK" secondAttribute="centerX" id="bc8-gr-atX"/>
                 <constraint firstItem="CGh-ph-49t" firstAttribute="bottom" secondItem="C9Z-3u-ohd" secondAttribute="top" constant="-10" id="diZ-Kj-1hU"/>
+                <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" secondItem="chh-VR-PhS" secondAttribute="bottom" constant="8" id="gxv-9b-Ycv"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i6j-iI-02e"/>
                 <constraint firstItem="RA8-jd-dag" firstAttribute="centerX" secondItem="RR4-5o-pli" secondAttribute="centerX" id="inw-ZS-osP"/>
                 <constraint firstItem="C9Z-3u-ohd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="20" id="luj-6S-dgY"/>
@@ -440,6 +449,7 @@
                 <constraint firstItem="H78-kl-y6L" firstAttribute="centerY" secondItem="0CR-0R-0Nr" secondAttribute="centerY" id="o0A-rK-1SQ"/>
                 <constraint firstItem="etg-x7-Mx1" firstAttribute="centerY" secondItem="0CR-0R-0Nr" secondAttribute="centerY" id="uxL-V3-wEY"/>
                 <constraint firstItem="etg-x7-Mx1" firstAttribute="centerX" secondItem="RA8-jd-dag" secondAttribute="centerX" id="v5R-tE-Ub7"/>
+                <constraint firstItem="chh-VR-PhS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wfT-B6-6MJ"/>
                 <constraint firstItem="RR4-5o-pli" firstAttribute="top" secondItem="cuq-ue-Jyj" secondAttribute="bottom" constant="10" id="ymC-lk-DI6"/>
             </constraints>
             <point key="canvasLocation" x="191" y="485"/>

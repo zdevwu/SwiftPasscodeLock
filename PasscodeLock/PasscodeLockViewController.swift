@@ -28,6 +28,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     }
     
     @IBOutlet public weak var titleLabel: UILabel?
+	@IBOutlet public weak var customImageView: UIImageView?
     @IBOutlet public weak var descriptionLabel: UILabel?
     @IBOutlet public var placeholders: [PasscodeSignPlaceholderView] = [PasscodeSignPlaceholderView]()
     @IBOutlet public weak var cancelButton: UIButton?
