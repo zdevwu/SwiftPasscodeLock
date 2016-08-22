@@ -37,6 +37,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     @IBOutlet public weak var placeholdersX: NSLayoutConstraint?
     
     public var successCallback: ((lock: PasscodeLockType) -> Void)?
+	public var customImage : UIImage?
     public var dismissCompletionCallback: (()->Void)?
     public var animateOnDismiss: Bool
     public var notificationCenter: NSNotificationCenter?
@@ -100,7 +101,8 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     }
     
     internal func updatePasscodeView() {
-        
+
+		customImageView?.image = self.customImage
         titleLabel?.text = passcodeLock.state.title
         descriptionLabel?.text = passcodeLock.state.description
         cancelButton?.hidden = !passcodeLock.state.isCancellableAction
