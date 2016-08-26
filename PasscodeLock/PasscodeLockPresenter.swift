@@ -41,7 +41,7 @@ public class PasscodeLockPresenter {
         self.init(mainWindow: window, configuration: configuration, viewController: passcodeLockVC)
     }
     
-    public func presentPasscodeLock() {
+	public func presentPasscodeLock(withImage image: UIImage? = nil) {
         
         guard passcodeConfiguration.repository.hasPasscode else { return }
         guard !isPasscodePresented else { return }
@@ -55,7 +55,7 @@ public class PasscodeLockPresenter {
         mainWindow?.endEditing(true)
 
         let passcodeLockVC = PasscodeLockViewController(state: .EnterPasscode, configuration: passcodeConfiguration)
-		passcodeLockVC.customImageView?.image = passcodeLockVC.customImage
+		passcodeLockVC.customImageView?.image = image
         let userDismissCompletionCallback = passcodeLockVC.dismissCompletionCallback
         
         passcodeLockVC.dismissCompletionCallback = { [weak self] in
