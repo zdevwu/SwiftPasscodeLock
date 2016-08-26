@@ -27,9 +27,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="chh-VR-PhS">
-                    <rect key="frame" x="200" y="37" width="200" height="74"/>
+                    <rect key="frame" x="200" y="51" width="200" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="74" id="bjg-2F-XKg"/>
+                        <constraint firstAttribute="height" constant="60" id="bjg-2F-XKg"/>
                         <constraint firstAttribute="width" constant="200" id="hcd-sv-AMY"/>
                     </constraints>
                 </imageView>
@@ -432,7 +432,7 @@
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="16" id="RDw-W3-MpZ"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RgV-eT-vCl"/>
                 <constraint firstItem="0CR-0R-0Nr" firstAttribute="top" secondItem="PbJ-Y8-MMf" secondAttribute="bottom" constant="10" id="Sah-YV-A2O"/>
-                <constraint firstItem="chh-VR-PhS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="37" id="Sbz-XI-hTN"/>
+                <constraint firstItem="chh-VR-PhS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Sbz-XI-hTN"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VMo-hv-2qR"/>
                 <constraint firstItem="PbJ-Y8-MMf" firstAttribute="top" secondItem="C9Z-3u-ohd" secondAttribute="bottom" constant="10" id="Vo4-YP-n8O"/>
                 <constraint firstItem="HcN-lo-9Jb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wqo-IM-yCU"/>
