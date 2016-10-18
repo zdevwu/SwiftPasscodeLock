@@ -10,7 +10,7 @@ import Foundation
 
 func localizedStringFor(key: String, comment: String) -> String {
     
-    let name = "PasscodeLock"
+    let name = "Localize"
     let bundle = bundleForResource(name, ofType: "strings")
     
     return NSLocalizedString(key, tableName: name, bundle: bundle, comment: comment)

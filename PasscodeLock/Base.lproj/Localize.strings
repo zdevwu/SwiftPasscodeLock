@@ -1,13 +1,13 @@
 /* 
-  PasscodeLock.strings
+  Localize.strings
   PasscodeLock
 
-  Created by Yanko Dimitrov on 8/28/15.
-  Copyright (c) 2015 Yanko Dimitrov. All rights reserved.
+  Created by Ramiro Ramirez on 18/10/16.
+  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 */
 
 /* Enter Passcode State */
-"PasscodeLockEnterTitle" = "Enter Passcode";
+"PasscodeLockEnterTitle" = "Enter Passcodeeeeee";
 "PasscodeLockEnterDescription" = "Enter your passcode to proceed.";
 
 /* Set Passcode State */
@@ -31,3 +31,6 @@
 
 /* Touch ID Fallback Button */
 "PasscodeLockTouchIDButton" = "Enter Passcode";
+
+"Cancel" = "Cancel";
+"Delete" = "Delete";
