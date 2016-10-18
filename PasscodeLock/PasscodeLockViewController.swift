@@ -107,6 +107,8 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         descriptionLabel?.text = passcodeLock.state.description
         cancelButton?.hidden = !passcodeLock.state.isCancellableAction
         touchIDButton?.hidden = !passcodeLock.isTouchIDAllowed
+		cancelButton?.setTitle(localizedStringFor("Cancel", comment: ""), forState: .Normal)
+		deleteSignButton?.setTitle(localizedStringFor("Delete", comment: ""), forState: .Normal)
     }
     
     // MARK: - Events

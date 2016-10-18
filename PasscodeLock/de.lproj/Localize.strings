@@ -1,0 +1,37 @@
+/* 
+  Localize.strings
+  PasscodeLock
+
+  Created by Ramiro Ramirez on 18/10/16.
+  Copyright © 2016 Yanko Dimitrov. All rights reserved.
+*/
+
+/* Enter Passcode State */
+"PasscodeLockEnterTitle" = "Passwort eingeben";
+"PasscodeLockEnterDescription" = "Passwort eingeben um fortzufahren.";
+
+/* Set Passcode State */
+"PasscodeLockSetTitle" = "Passwort eingeben";
+"PasscodeLockSetDescription" = "Wähle ein Passwort.";
+
+/* Confirm Passcode State */
+"PasscodeLockConfirmTitle" = "Passwort bitte bestätigen";
+"PasscodeLockConfirmDescription" = "Passwort bitte erneut eingeben.";
+
+/* Change Passcode State */
+"PasscodeLockChangeTitle" = "Altes Passwort eingeben";
+"PasscodeLockChangeDescription" = "Bitte alte Passwort eingeben.";
+
+/* Passcode Mismatch State */
+"PasscodeLockMismatchTitle" = "Bitte erneut versuchen";
+"PasscodeLockMismatchDescription" = "Passwörter stimmen nicht überein.";
+
+/* Touch ID Reason */
+"PasscodeLockTouchIDReason" = "Authentifizierung erforderlich um fortzufahren";
+
+/* Touch ID Fallback Button */
+"PasscodeLockTouchIDButton" = "Passwort eingeben";
+
+"Cancel" = "Abbrechen";
+"Delete" = "Löschen";
+
