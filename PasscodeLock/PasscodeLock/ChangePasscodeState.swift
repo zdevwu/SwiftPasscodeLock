@@ -15,13 +15,13 @@ struct ChangePasscodeState: PasscodeLockStateType {
     let isCancellableAction = true
     var isTouchIDAllowed = false
     
-    init() {
+	init(stringsToShow: StringsToBeDisplayed?) {
         
-        title = localizedStringFor("PasscodeLockChangeTitle", comment: "Change passcode title")
-        description = localizedStringFor("PasscodeLockChangeDescription", comment: "Change passcode description")
+        title = (stringsToShow?.PasscodeLockChangeTitle ?? localizedStringFor("PasscodeLockChangeTitle", comment: "Change passcode title"))
+        description = (stringsToShow?.PasscodeLockChangeDescription ?? localizedStringFor("PasscodeLockChangeDescription", comment: "Change passcode description"))
     }
     
-    func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType) {
+	func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType, stringsToShow: StringsToBeDisplayed?) {
         
         guard let currentPasscode = lock.repository.passcode else {
             return
@@ -29,8 +29,8 @@ struct ChangePasscodeState: PasscodeLockStateType {
         
         if passcode == currentPasscode {
             
-            let nextState = SetPasscodeState()
-            
+			let nextState = SetPasscodeState(stringsToShow: stringsToShow)
+
             lock.changeStateTo(nextState)
             
         } else {

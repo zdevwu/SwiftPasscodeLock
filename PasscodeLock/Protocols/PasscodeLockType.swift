@@ -19,7 +19,7 @@ public protocol PasscodeLockType {
     func addSign(sign: String)
     func removeSign()
     func changeStateTo(state: PasscodeLockStateType)
-    func authenticateWithBiometrics()
+	func authenticateWithBiometrics(stringsToShow: StringsToBeDisplayed?)
 }
 
 public protocol PasscodeLockTypeDelegate: class {

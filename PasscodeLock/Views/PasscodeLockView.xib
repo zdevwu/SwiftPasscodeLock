@@ -377,7 +377,8 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etg-x7-Mx1">
-                    <rect key="frame" x="202" y="447" width="56" height="26"/>
+                    <rect key="frame" x="205" y="448" width="50" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                     <state key="normal" title="Cancel">
                         <color key="titleColor" red="0.4549019608" green="0.59999999999999998" blue="0.89411764709999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -387,7 +388,8 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H78-kl-y6L">
-                    <rect key="frame" x="344" y="447" width="53" height="26"/>
+                    <rect key="frame" x="346" y="448" width="48" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                     <state key="normal" title="Delete">
                         <color key="titleColor" red="0.45490196078431372" green="0.59999999999999998" blue="0.89411764705882357" alpha="1" colorSpace="calibratedRGB"/>

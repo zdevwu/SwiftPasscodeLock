@@ -16,13 +16,13 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         case ChangePasscode
         case RemovePasscode
         
-        func getState() -> PasscodeLockStateType {
+		func getState(stringsToShow: StringsToBeDisplayed?) -> PasscodeLockStateType {
             
             switch self {
-            case .EnterPasscode: return EnterPasscodeState()
-            case .SetPasscode: return SetPasscodeState()
-            case .ChangePasscode: return ChangePasscodeState()
-            case .RemovePasscode: return EnterPasscodeState(allowCancellation: true)
+			case .EnterPasscode: 	return EnterPasscodeState(stringsToShow: stringsToShow)
+			case .SetPasscode: 		return SetPasscodeState(stringsToShow: stringsToShow)
+			case .ChangePasscode: 	return ChangePasscodeState(stringsToShow: stringsToShow)
+            case .RemovePasscode: 	return EnterPasscodeState(allowCancellation: true, stringsToShow: stringsToShow)
             }
         }
     }
@@ -41,6 +41,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     public var dismissCompletionCallback: (()->Void)?
     public var animateOnDismiss: Bool
     public var notificationCenter: NSNotificationCenter?
+	public var stringsToShow: StringsToBeDisplayed?
     
     internal let passcodeConfiguration: PasscodeLockConfigurationType
     internal let passcodeLock: PasscodeLockType
@@ -50,8 +51,9 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     
     // MARK: - Initializers
     
-    public init(state: PasscodeLockStateType, configuration: PasscodeLockConfigurationType, animateOnDismiss: Bool = true) {
-        
+	public init(state: PasscodeLockStateType, configuration: PasscodeLockConfigurationType, animateOnDismiss: Bool = true, stringToShow: StringsToBeDisplayed?) {
+
+		self.stringsToShow = stringToShow
         self.animateOnDismiss = animateOnDismiss
         
         passcodeConfiguration = configuration
@@ -66,9 +68,9 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         notificationCenter = NSNotificationCenter.defaultCenter()
     }
     
-    public convenience init(state: LockState, configuration: PasscodeLockConfigurationType, animateOnDismiss: Bool = true) {
+	public convenience init(state: LockState, configuration: PasscodeLockConfigurationType, animateOnDismiss: Bool = true, stringsToShow: StringsToBeDisplayed?) {
         
-        self.init(state: state.getState(), configuration: configuration, animateOnDismiss: animateOnDismiss)
+        self.init(state: state.getState(stringsToShow), configuration: configuration, animateOnDismiss: animateOnDismiss, stringToShow: stringsToShow)
     }
     
     public required init(coder aDecoder: NSCoder) {
@@ -107,8 +109,9 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         descriptionLabel?.text = passcodeLock.state.description
         cancelButton?.hidden = !passcodeLock.state.isCancellableAction
         touchIDButton?.hidden = !passcodeLock.isTouchIDAllowed
-		cancelButton?.setTitle(localizedStringFor("Cancel", comment: ""), forState: .Normal)
-		deleteSignButton?.setTitle(localizedStringFor("Delete", comment: ""), forState: .Normal)
+		touchIDButton?.setTitle((self.stringsToShow?.UseTouchID ?? localizedStringFor("UseTouchId", comment: "")), forState: .Normal)
+		cancelButton?.setTitle((self.stringsToShow?.Cancel ?? localizedStringFor("Cancel", comment: "")), forState: .Normal)
+		deleteSignButton?.setTitle((self.stringsToShow?.Delete ?? localizedStringFor("Delete", comment: "")), forState: .Normal)
     }
     
     // MARK: - Events
@@ -156,14 +159,14 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     
     @IBAction func touchIDButtonTap(sender: UIButton) {
         
-        passcodeLock.authenticateWithBiometrics()
+        passcodeLock.authenticateWithBiometrics(self.stringsToShow)
     }
     
     private func authenticateWithBiometrics() {
         
         if passcodeConfiguration.shouldRequestTouchIDImmediately && passcodeLock.isTouchIDAllowed {
             
-            passcodeLock.authenticateWithBiometrics()
+            passcodeLock.authenticateWithBiometrics(self.stringsToShow)
         }
     }
     

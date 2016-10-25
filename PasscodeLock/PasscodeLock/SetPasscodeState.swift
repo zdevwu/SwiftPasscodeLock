@@ -20,17 +20,17 @@ struct SetPasscodeState: PasscodeLockStateType {
         self.title = title
         self.description = description
     }
-    
-    init() {
+
+	init(stringsToShow: StringsToBeDisplayed?) {
         
-        title = localizedStringFor("PasscodeLockSetTitle", comment: "Set passcode title")
-        description = localizedStringFor("PasscodeLockSetDescription", comment: "Set passcode description")
+        title = (stringsToShow?.PasscodeLockSetTitle ?? localizedStringFor("PasscodeLockSetTitle", comment: "Set passcode title"))
+        description = (stringsToShow?.PasscodeLockSetDescription ?? localizedStringFor("PasscodeLockSetDescription", comment: "Set passcode description"))
     }
     
-    func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType) {
+	func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType, stringsToShow: StringsToBeDisplayed?) {
         
-        let nextState = ConfirmPasscodeState(passcode: passcode)
-        
+		let nextState = ConfirmPasscodeState(passcode: passcode, stringsToShow: stringsToShow)
+
         lock.changeStateTo(nextState)
     }
 }

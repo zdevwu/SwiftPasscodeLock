@@ -57,12 +57,12 @@ class PasscodeSettingsViewController: UIViewController {
         
         if passcodeSwitch.on {
             
-            passcodeVC = PasscodeLockViewController(state: .SetPasscode, configuration: configuration)
-            
+			passcodeVC = PasscodeLockViewController(state: .SetPasscode, configuration: configuration, stringsToShow: nil)
+
         } else {
             
-            passcodeVC = PasscodeLockViewController(state: .RemovePasscode, configuration: configuration)
-            
+			passcodeVC = PasscodeLockViewController(state: .RemovePasscode, configuration: configuration, stringsToShow: nil)
+
             passcodeVC.successCallback = { lock in
                 
                 lock.repository.deletePasscode()
@@ -77,8 +77,8 @@ class PasscodeSettingsViewController: UIViewController {
         let repo = UserDefaultsPasscodeRepository()
         let config = PasscodeLockConfiguration(repository: repo)
         
-        let passcodeLock = PasscodeLockViewController(state: .ChangePasscode, configuration: config)
-        
+		let passcodeLock = PasscodeLockViewController(state: .ChangePasscode, configuration: config, stringsToShow: nil)
+
         presentViewController(passcodeLock, animated: true, completion: nil)
     }
     

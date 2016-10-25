@@ -44,7 +44,7 @@ public class PasscodeLock: PasscodeLockType {
         
         if passcode.count >= configuration.passcodeLength {
             
-            lockState.acceptPasscode(passcode, fromLock: self)
+            lockState.acceptPasscode(passcode, fromLock: self, stringsToShow: nil)
             passcode.removeAll(keepCapacity: true)
         }
     }
@@ -63,14 +63,14 @@ public class PasscodeLock: PasscodeLockType {
         delegate?.passcodeLockDidChangeState(self)
     }
     
-    public func authenticateWithBiometrics() {
+	public func authenticateWithBiometrics(stringsToShow: StringsToBeDisplayed?) {
         
         guard isTouchIDAllowed else { return }
         
         let context = LAContext()
-        let reason = localizedStringFor("PasscodeLockTouchIDReason", comment: "TouchID authentication reason")
+        let reason = (stringsToShow?.PasscodeLockTouchIDReason ?? localizedStringFor("PasscodeLockTouchIDReason", comment: "TouchID authentication reason"))
 
-        context.localizedFallbackTitle = localizedStringFor("PasscodeLockTouchIDButton", comment: "TouchID authentication fallback button")
+        context.localizedFallbackTitle = (stringsToShow?.PasscodeLockTouchIDButton ?? localizedStringFor("PasscodeLockTouchIDButton", comment: "TouchID authentication fallback button"))
         
         context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
             success, error in

@@ -8,6 +8,27 @@
 
 import UIKit
 
+public struct StringsToBeDisplayed {
+
+	public var PasscodeLockEnterTitle: 				String?
+	public var PasscodeLockEnterDescription:		String?
+	public var PasscodeLockSetTitle:				String?
+	public var PasscodeLockSetDescription:			String?
+	public var PasscodeLockConfirmTitle:			String?
+	public var PasscodeLockConfirmDescription: 		String?
+
+	public var PasscodeLockChangeTitle: 			String?
+	public var PasscodeLockChangeDescription: 		String?
+	public var PasscodeLockMismatchTitle:			String?
+	public var PasscodeLockMismatchDescription:		String?
+	public var PasscodeLockTouchIDReason:			String?
+	public var PasscodeLockTouchIDButton:			String?
+
+	public var Cancel:								String?
+	public var Delete:								String?
+	public var UseTouchID:							String?
+}
+
 public class PasscodeLockPresenter {
     
     private var mainWindow: UIWindow?
@@ -25,6 +46,7 @@ public class PasscodeLockPresenter {
     private let passcodeConfiguration: PasscodeLockConfigurationType
     public var isPasscodePresented = false
     public let passcodeLockVC: PasscodeLockViewController
+	public var stringsToBeDisplayed: StringsToBeDisplayed?
     
     public init(mainWindow window: UIWindow?, configuration: PasscodeLockConfigurationType, viewController: PasscodeLockViewController) {
         
@@ -34,14 +56,14 @@ public class PasscodeLockPresenter {
         passcodeLockVC = viewController
     }
 
-    public convenience init(mainWindow window: UIWindow?, configuration: PasscodeLockConfigurationType) {
+    public convenience init(mainWindow window: UIWindow?, configuration: PasscodeLockConfigurationType, stringsToShow: StringsToBeDisplayed?) {
         
-        let passcodeLockVC = PasscodeLockViewController(state: .EnterPasscode, configuration: configuration)
-        
+		let passcodeLockVC = PasscodeLockViewController(state: .EnterPasscode, configuration: configuration, stringsToShow: stringsToShow)
+
         self.init(mainWindow: window, configuration: configuration, viewController: passcodeLockVC)
     }
     
-	public func presentPasscodeLock(withImage image: UIImage? = nil) {
+	public func presentPasscodeLock(withImage image: UIImage? = nil, andStrings stringsToShow: StringsToBeDisplayed? = nil) {
         
         guard passcodeConfiguration.repository.hasPasscode else { return }
         guard !isPasscodePresented else { return }
@@ -54,7 +76,7 @@ public class PasscodeLockPresenter {
         mainWindow?.windowLevel = 1
         mainWindow?.endEditing(true)
 
-        let passcodeLockVC = PasscodeLockViewController(state: .EnterPasscode, configuration: passcodeConfiguration)
+		let passcodeLockVC = PasscodeLockViewController(state: .EnterPasscode, configuration: passcodeConfiguration, stringsToShow: stringsToShow)
 		passcodeLockVC.customImage = image
         let userDismissCompletionCallback = passcodeLockVC.dismissCompletionCallback
         
