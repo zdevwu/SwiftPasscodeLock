@@ -20,8 +20,8 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
 	init(passcode: [String], stringsToShow: StringsToBeDisplayed?) {
         
         passcodeToConfirm = passcode
-        title = (stringsToShow?.PasscodeLockConfirmTitle ?? localizedStringFor("PasscodeLockConfirmTitle", comment: "Confirm passcode title"))
-        description = (stringsToShow?.PasscodeLockConfirmDescription ?? localizedStringFor("PasscodeLockConfirmDescription", comment: "Confirm passcode description"))
+        title = (stringsToShow?.passcodeLockConfirmTitle ?? localizedStringFor("PasscodeLockConfirmTitle", comment: "Confirm passcode title"))
+        description = (stringsToShow?.passcodeLockConfirmDescription ?? localizedStringFor("PasscodeLockConfirmDescription", comment: "Confirm passcode description"))
     }
     
 	func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType, stringsToShow: StringsToBeDisplayed?) {
@@ -33,8 +33,8 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
         
         } else {
             
-            let mismatchTitle = (stringsToShow?.PasscodeLockMismatchTitle ?? localizedStringFor("PasscodeLockMismatchTitle", comment: "Passcode mismatch title"))
-            let mismatchDescription = (stringsToShow?.PasscodeLockMismatchDescription ?? localizedStringFor("PasscodeLockMismatchDescription", comment: "Passcode mismatch description"))
+            let mismatchTitle = (stringsToShow?.passcodeLockMismatchTitle ?? localizedStringFor("PasscodeLockMismatchTitle", comment: "Passcode mismatch title"))
+            let mismatchDescription = (stringsToShow?.passcodeLockMismatchDescription ?? localizedStringFor("PasscodeLockMismatchDescription", comment: "Passcode mismatch description"))
             
             let nextState = SetPasscodeState(title: mismatchTitle, description: mismatchDescription)
             
