@@ -109,9 +109,9 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         descriptionLabel?.text = passcodeLock.state.description
         cancelButton?.hidden = !passcodeLock.state.isCancellableAction
         touchIDButton?.hidden = !passcodeLock.isTouchIDAllowed
-		touchIDButton?.setTitle((self.stringsToShow?.UseTouchID ?? localizedStringFor("UseTouchId", comment: "")), forState: .Normal)
-		cancelButton?.setTitle((self.stringsToShow?.Cancel ?? localizedStringFor("Cancel", comment: "")), forState: .Normal)
-		deleteSignButton?.setTitle((self.stringsToShow?.Delete ?? localizedStringFor("Delete", comment: "")), forState: .Normal)
+		touchIDButton?.setTitle((self.stringsToShow?.useTouchID ?? localizedStringFor("UseTouchId", comment: "")), forState: .Normal)
+		cancelButton?.setTitle((self.stringsToShow?.cancel ?? localizedStringFor("Cancel", comment: "")), forState: .Normal)
+		deleteSignButton?.setTitle((self.stringsToShow?.delete ?? localizedStringFor("Delete", comment: "")), forState: .Normal)
     }
     
     // MARK: - Events

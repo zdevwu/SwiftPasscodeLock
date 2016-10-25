@@ -23,8 +23,8 @@ struct EnterPasscodeState: PasscodeLockStateType {
 	init(allowCancellation: Bool = false, stringsToShow: StringsToBeDisplayed?) {
 
         isCancellableAction = allowCancellation
-        title = (stringsToShow?.PasscodeLockEnterTitle ?? localizedStringFor("PasscodeLockEnterTitle", comment: "Enter passcode title"))
-        description = (stringsToShow?.PasscodeLockEnterDescription ?? localizedStringFor("PasscodeLockEnterDescription", comment: "Enter passcode description"))
+        title = (stringsToShow?.passcodeLockEnterTitle ?? localizedStringFor("PasscodeLockEnterTitle", comment: "Enter passcode title"))
+        description = (stringsToShow?.passcodeLockEnterDescription ?? localizedStringFor("PasscodeLockEnterDescription", comment: "Enter passcode description"))
     }
     
 	mutating func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType, stringsToShow: StringsToBeDisplayed?) {
