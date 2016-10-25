@@ -20,14 +20,14 @@ struct EnterPasscodeState: PasscodeLockStateType {
     private var inccorectPasscodeAttempts = 0
     private var isNotificationSent = false
     
-    init(allowCancellation: Bool = false) {
-        
+	init(allowCancellation: Bool = false, stringsToShow: StringsToBeDisplayed?) {
+
         isCancellableAction = allowCancellation
-        title = localizedStringFor("PasscodeLockEnterTitle", comment: "Enter passcode title")
-        description = localizedStringFor("PasscodeLockEnterDescription", comment: "Enter passcode description")
+        title = (stringsToShow?.PasscodeLockEnterTitle ?? localizedStringFor("PasscodeLockEnterTitle", comment: "Enter passcode title"))
+        description = (stringsToShow?.PasscodeLockEnterDescription ?? localizedStringFor("PasscodeLockEnterDescription", comment: "Enter passcode description"))
     }
     
-    mutating func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType) {
+	mutating func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType, stringsToShow: StringsToBeDisplayed?) {
         
         guard let currentPasscode = lock.repository.passcode else {
             return
