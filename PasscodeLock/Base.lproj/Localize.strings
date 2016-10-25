@@ -7,7 +7,7 @@
 */
 
 /* Enter Passcode State */
-"PasscodeLockEnterTitle" = "Enter Passcodeeeeee";
+"PasscodeLockEnterTitle" = "Enter Passcode";
 "PasscodeLockEnterDescription" = "Enter your passcode to proceed.";
 
 /* Set Passcode State */
