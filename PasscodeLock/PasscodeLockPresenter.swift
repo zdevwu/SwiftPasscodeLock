@@ -10,23 +10,42 @@ import UIKit
 
 public struct StringsToBeDisplayed {
 
-	public var PasscodeLockEnterTitle: 				String?
-	public var PasscodeLockEnterDescription:		String?
-	public var PasscodeLockSetTitle:				String?
-	public var PasscodeLockSetDescription:			String?
-	public var PasscodeLockConfirmTitle:			String?
-	public var PasscodeLockConfirmDescription: 		String?
+	public var passcodeLockEnterTitle: 				String?
+	public var passcodeLockEnterDescription:		String?
+	public var passcodeLockSetTitle:				String?
+	public var passcodeLockSetDescription:			String?
+	public var passcodeLockConfirmTitle:			String?
+	public var passcodeLockConfirmDescription: 		String?
 
-	public var PasscodeLockChangeTitle: 			String?
-	public var PasscodeLockChangeDescription: 		String?
-	public var PasscodeLockMismatchTitle:			String?
-	public var PasscodeLockMismatchDescription:		String?
-	public var PasscodeLockTouchIDReason:			String?
-	public var PasscodeLockTouchIDButton:			String?
+	public var passcodeLockChangeTitle: 			String?
+	public var passcodeLockChangeDescription: 		String?
+	public var passcodeLockMismatchTitle:			String?
+	public var passcodeLockMismatchDescription:		String?
+	public var passcodeLockTouchIDReason:			String?
+	public var passcodeLockTouchIDButton:			String?
 
-	public var Cancel:								String?
-	public var Delete:								String?
-	public var UseTouchID:							String?
+	public var cancel:								String?
+	public var delete:								String?
+	public var useTouchID:							String?
+
+	public init(passcodeLockEnterTitle: String?, passcodeLockEnterDescription: String?, passcodeLockSetTitle: String?, passcodeLockSetDescription: String?, passcodeLockConfirmTitle: String?, passcodeLockConfirmDescription: String?, passcodeLockChangeTitle: String?,  passcodeLockChangeDescription: String?, passcodeLockMismatchTitle: String?, passcodeLockMismatchDescription: String?, passcodeLockTouchIDReason: String?, passcodeLockTouchIDButton: String?, cancel: String?, delete: String?, useTouchID: String?) {
+
+		self.passcodeLockEnterTitle = passcodeLockEnterTitle
+		self.passcodeLockEnterDescription = passcodeLockEnterDescription
+		self.passcodeLockSetTitle = passcodeLockSetTitle
+		self.passcodeLockSetDescription = passcodeLockSetDescription
+		self.passcodeLockConfirmTitle = passcodeLockConfirmTitle
+		self.passcodeLockConfirmDescription = passcodeLockConfirmDescription
+		self.passcodeLockChangeTitle = passcodeLockChangeTitle
+		self.passcodeLockChangeDescription = passcodeLockChangeDescription
+		self.passcodeLockMismatchTitle = passcodeLockMismatchTitle
+		self.passcodeLockMismatchDescription = passcodeLockMismatchDescription
+		self.passcodeLockTouchIDReason = passcodeLockTouchIDReason
+		self.passcodeLockTouchIDButton = passcodeLockTouchIDButton
+		self.cancel = cancel
+		self.delete = delete
+		self.useTouchID = useTouchID
+	}
 }
 
 public class PasscodeLockPresenter {
