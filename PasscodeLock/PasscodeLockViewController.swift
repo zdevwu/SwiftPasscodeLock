@@ -36,7 +36,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     @IBOutlet public weak var touchIDButton: UIButton?
     @IBOutlet public weak var placeholdersX: NSLayoutConstraint?
     
-    public var successCallback: ((_ lock: PasscodeLockType) -> Void)?
+    public var successCallback: ((lock: PasscodeLockType) -> Void)?
 	public var customImage : UIImage?
     public var dismissCompletionCallback: (()->Void)?
     public var animateOnDismiss: Bool
