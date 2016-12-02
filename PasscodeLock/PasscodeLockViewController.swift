@@ -42,6 +42,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     public var animateOnDismiss: Bool
     public var notificationCenter: NSNotificationCenter?
 	public var stringsToShow: StringsToBeDisplayed?
+	public var closingView: Bool = false
     
     internal let passcodeConfiguration: PasscodeLockConfigurationType
     internal let passcodeLock: PasscodeLockType
