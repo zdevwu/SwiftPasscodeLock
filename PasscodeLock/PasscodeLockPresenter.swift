@@ -82,7 +82,7 @@ public class PasscodeLockPresenter {
         self.init(mainWindow: window, configuration: configuration, viewController: passcodeLockVC)
     }
     
-	public func presentPasscodeLock(withImage image: UIImage? = nil, andStrings stringsToShow: StringsToBeDisplayed? = nil) {
+	public func presentPasscodeLock(withImage image: UIImage? = nil, andStrings stringsToShow: StringsToBeDisplayed? = nil, dismissCompletionBlock: (() -> Void)? = nil) {
         
         guard passcodeConfiguration.repository.hasPasscode else { return }
         guard !isPasscodePresented else { return }
@@ -102,8 +102,8 @@ public class PasscodeLockPresenter {
         passcodeLockVC.dismissCompletionCallback = { [weak self] in
             
             userDismissCompletionCallback?()
-            
             self?.dismissPasscodeLock()
+			dismissCompletionBlock?()
         }
         
         passcodeLockWindow.rootViewController = passcodeLockVC
