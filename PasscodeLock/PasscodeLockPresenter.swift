@@ -100,10 +100,10 @@ public class PasscodeLockPresenter {
         let userDismissCompletionCallback = passcodeLockVC.dismissCompletionCallback
         
         passcodeLockVC.dismissCompletionCallback = { [weak self] in
-            
+			dismissCompletionBlock?()
             userDismissCompletionCallback?()
             self?.dismissPasscodeLock()
-			dismissCompletionBlock?()
+
         }
         
         passcodeLockWindow.rootViewController = passcodeLockVC
