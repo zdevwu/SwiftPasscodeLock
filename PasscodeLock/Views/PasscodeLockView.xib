@@ -31,15 +31,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="chh-VR-PhS">
-                    <rect key="frame" x="60" y="49" width="200" height="35"/>
+                    <rect key="frame" x="60" y="17.5" width="200" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="35" id="bjg-2F-XKg"/>
+                        <constraint firstAttribute="height" constant="44" id="bjg-2F-XKg"/>
                         <constraint firstAttribute="width" constant="200" id="hcd-sv-AMY"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wK-Ol-7mm">
-                    <rect key="frame" x="141.5" y="92" width="37" height="23"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <rect key="frame" x="142.5" y="93.5" width="35.5" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -444,7 +444,7 @@
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="16" id="bR1-VP-TdA"/>
                 <constraint firstItem="EUD-XB-0CR" firstAttribute="centerX" secondItem="WDx-aD-wJK" secondAttribute="centerX" id="bc8-gr-atX"/>
                 <constraint firstItem="CGh-ph-49t" firstAttribute="bottom" secondItem="C9Z-3u-ohd" secondAttribute="top" constant="-10" id="diZ-Kj-1hU"/>
-                <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" secondItem="chh-VR-PhS" secondAttribute="bottom" constant="8" id="gxv-9b-Ycv"/>
+                <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" secondItem="chh-VR-PhS" secondAttribute="bottom" constant="32" id="gxv-9b-Ycv"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i6j-iI-02e"/>
                 <constraint firstItem="RA8-jd-dag" firstAttribute="centerX" secondItem="RR4-5o-pli" secondAttribute="centerX" id="inw-ZS-osP"/>
                 <constraint firstItem="C9Z-3u-ohd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="20" id="luj-6S-dgY"/>
@@ -455,7 +455,7 @@
                 <constraint firstItem="chh-VR-PhS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wfT-B6-6MJ"/>
                 <constraint firstItem="RR4-5o-pli" firstAttribute="top" secondItem="cuq-ue-Jyj" secondAttribute="bottom" constant="10" id="ymC-lk-DI6"/>
             </constraints>
-            <point key="canvasLocation" x="191" y="485"/>
+            <point key="canvasLocation" x="74" y="442"/>
         </view>
     </objects>
 </document>
