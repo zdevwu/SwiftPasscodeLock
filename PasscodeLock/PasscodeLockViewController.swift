@@ -192,7 +192,6 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     
     internal func animateWrongPassword() {
 
-		//        deleteSignButton?.enabled = false
 		self.cancelDeleteButtonSetup()
         isPlaceholdersAnimationCompleted = false
         
