@@ -96,7 +96,9 @@ public class PasscodeLockPresenter {
         mainWindow?.endEditing(true)
 
 		let passcodeLockVC = PasscodeLockViewController(state: .EnterPasscode, configuration: passcodeConfiguration, stringsToShow: stringsToShow)
-		passcodeLockVC.customImage = image
+		if (image != nil) {
+			passcodeLockVC.customImage = image
+		}
         let userDismissCompletionCallback = passcodeLockVC.dismissCompletionCallback
         
         passcodeLockVC.dismissCompletionCallback = { [weak self] in
