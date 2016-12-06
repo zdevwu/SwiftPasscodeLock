@@ -9,10 +9,10 @@
 import Foundation
 import LocalAuthentication
 
-public class PasscodeLock: PasscodeLockType {
+public class PasscodeLock		: PasscodeLockType {
     
-    public weak var delegate: PasscodeLockTypeDelegate?
-    public let configuration: PasscodeLockConfigurationType
+    public weak var delegate	: PasscodeLockTypeDelegate?
+    public let configuration	: PasscodeLockConfigurationType
     
     public var repository: PasscodeRepositoryType {
         return configuration.repository
@@ -42,7 +42,7 @@ public class PasscodeLock: PasscodeLockType {
         passcode.append(sign)
         delegate?.passcodeLock(self, addedSignAtIndex: passcode.count - 1)
         
-        if passcode.count >= configuration.passcodeLength {
+        if (passcode.count >= configuration.passcodeLength) {
             
             lockState.acceptPasscode(passcode, fromLock: self, stringsToShow: nil)
             passcode.removeAll(keepCapacity: true)
@@ -51,7 +51,9 @@ public class PasscodeLock: PasscodeLockType {
     
     public func removeSign() {
         
-        guard passcode.count > 0 else { return }
+        guard (passcode.count > 0) else {
+			return
+		}
         
         passcode.removeLast()
         delegate?.passcodeLock(self, removedSignAtIndex: passcode.count)
@@ -65,16 +67,16 @@ public class PasscodeLock: PasscodeLockType {
     
 	public func authenticateWithBiometrics(stringsToShow: StringsToBeDisplayed?) {
         
-        guard isTouchIDAllowed else { return }
+        guard (isTouchIDAllowed == true) else {
+			return
+		}
         
         let context = LAContext()
         let reason = (stringsToShow?.passcodeLockTouchIDReason ?? localizedStringFor("PasscodeLockTouchIDReason", comment: "TouchID authentication reason"))
 
         context.localizedFallbackTitle = (stringsToShow?.passcodeLockTouchIDButton ?? localizedStringFor("PasscodeLockTouchIDButton", comment: "TouchID authentication fallback button"))
         
-        context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
-            success, error in
-            
+        context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { (success, error) in
             self.handleTouchIDResult(success)
         }
     }
@@ -83,8 +85,7 @@ public class PasscodeLock: PasscodeLockType {
         
         dispatch_async(dispatch_get_main_queue()) {
             
-            if success {
-                
+            if (success == true) {
                 self.delegate?.passcodeLockDidSucceed(self)
             }
         }
@@ -93,7 +94,6 @@ public class PasscodeLock: PasscodeLockType {
     private func isTouchIDEnabled() -> Bool {
         
         let context = LAContext()
-        
         return context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: nil)
     }
 }

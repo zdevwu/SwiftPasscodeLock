@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct ConfirmPasscodeState: PasscodeLockStateType {
+struct ConfirmPasscodeState	: PasscodeLockStateType {
     
-    let title: String
-    let description: String
+    let title				: String
+    let description			: String
     let isCancellableAction = true
-    var isTouchIDAllowed = false
+    var isTouchIDAllowed 	= false
     
     private var passcodeToConfirm: [String]
     
@@ -26,8 +26,7 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
     
 	func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType, stringsToShow: StringsToBeDisplayed?) {
         
-        if passcode == passcodeToConfirm {
-            
+        if (passcode == passcodeToConfirm) {
             lock.repository.savePasscode(passcode)
             lock.delegate?.passcodeLockDidSucceed(lock)
         
@@ -35,9 +34,7 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
             
             let mismatchTitle = (stringsToShow?.passcodeLockMismatchTitle ?? localizedStringFor("PasscodeLockMismatchTitle", comment: "Passcode mismatch title"))
             let mismatchDescription = (stringsToShow?.passcodeLockMismatchDescription ?? localizedStringFor("PasscodeLockMismatchDescription", comment: "Passcode mismatch description"))
-            
             let nextState = SetPasscodeState(title: mismatchTitle, description: mismatchDescription)
-            
             lock.changeStateTo(nextState)
             lock.delegate?.passcodeLockDidFail(lock)
         }

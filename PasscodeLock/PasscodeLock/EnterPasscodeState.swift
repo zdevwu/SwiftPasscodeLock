@@ -10,12 +10,12 @@ import Foundation
 
 public let PasscodeLockIncorrectPasscodeNotification = "passcode.lock.incorrect.passcode.notification"
 
-struct EnterPasscodeState: PasscodeLockStateType {
+struct EnterPasscodeState		: PasscodeLockStateType {
     
-    let title: String
-    let description: String
-    let isCancellableAction: Bool
-    var isTouchIDAllowed = true
+    let title					: String
+    let description				: String
+    let isCancellableAction		: Bool
+    var isTouchIDAllowed 		= true
     
     private var inccorectPasscodeAttempts = 0
     private var isNotificationSent = false
@@ -33,31 +33,27 @@ struct EnterPasscodeState: PasscodeLockStateType {
             return
         }
         
-        if passcode == currentPasscode {
-            
+        if (passcode == currentPasscode) {
             lock.delegate?.passcodeLockDidSucceed(lock)
             
         } else {
             
             inccorectPasscodeAttempts += 1
-            
-            if inccorectPasscodeAttempts >= lock.configuration.maximumInccorectPasscodeAttempts {
-                
+            if (inccorectPasscodeAttempts >= lock.configuration.maximumInccorectPasscodeAttempts) {
                 postNotification()
             }
-            
             lock.delegate?.passcodeLockDidFail(lock)
         }
     }
     
     private mutating func postNotification() {
         
-        guard !isNotificationSent else { return }
+        guard (isNotificationSent == false) else {
+			return
+		}
             
         let center = NSNotificationCenter.defaultCenter()
-        
         center.postNotificationName(PasscodeLockIncorrectPasscodeNotification, object: nil)
-        
         isNotificationSent = true
     }
 }

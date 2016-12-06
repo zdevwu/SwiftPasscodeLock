@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct SetPasscodeState: PasscodeLockStateType {
+struct SetPasscodeState		: PasscodeLockStateType {
     
-    let title: String
-    let description: String
+    let title				: String
+    let description			: String
     let isCancellableAction = true
-    var isTouchIDAllowed = false
+    var isTouchIDAllowed 	= false
     
     init(title: String, description: String) {
         
@@ -30,7 +30,6 @@ struct SetPasscodeState: PasscodeLockStateType {
 	func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType, stringsToShow: StringsToBeDisplayed?) {
         
 		let nextState = ConfirmPasscodeState(passcode: passcode, stringsToShow: stringsToShow)
-
         lock.changeStateTo(nextState)
     }
 }
