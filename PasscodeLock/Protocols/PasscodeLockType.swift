@@ -15,7 +15,8 @@ public protocol PasscodeLockType {
     var repository: PasscodeRepositoryType {get}
     var state: PasscodeLockStateType {get}
     var isTouchIDAllowed: Bool {get}
-    
+	var isPincodeEmpty: Bool {get}
+
     func addSign(sign: String)
     func removeSign()
     func changeStateTo(state: PasscodeLockStateType)

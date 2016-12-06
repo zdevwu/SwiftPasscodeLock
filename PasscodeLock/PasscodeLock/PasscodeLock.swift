@@ -25,6 +25,10 @@ public class PasscodeLock: PasscodeLockType {
     public var isTouchIDAllowed: Bool {
         return isTouchIDEnabled() && configuration.isTouchIDAllowed && lockState.isTouchIDAllowed
     }
+
+	public var isPincodeEmpty: Bool {
+		return passcode.isEmpty
+	}
     
     private var lockState: PasscodeLockStateType
     private lazy var passcode = [String]()
