@@ -219,14 +219,14 @@
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="    ">
+                            <fragment content="     ">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="38" name=".SFNSDisplay"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="ABC">
+                            <fragment content="A B C">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="9" name=".SFNSDisplay"/>
@@ -287,14 +287,14 @@
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="    ">
+                            <fragment content="     ">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="38" name="HelveticaNeue"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="DEF">
+                            <fragment content="D E F">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="9" name="HelveticaNeue"/>
@@ -355,14 +355,14 @@
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="    ">
+                            <fragment content="     ">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="38" name="HelveticaNeue"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="GHI">
+                            <fragment content="G H I">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="9" name="HelveticaNeue"/>
@@ -423,14 +423,14 @@
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="    ">
+                            <fragment content="     ">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="38" name="HelveticaNeue"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="JKL">
+                            <fragment content="J K L">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="9" name="HelveticaNeue"/>
@@ -491,14 +491,14 @@
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="    ">
+                            <fragment content="     ">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="38" name="HelveticaNeue"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="MNO">
+                            <fragment content="M N O">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="9" name="HelveticaNeue"/>
@@ -559,14 +559,14 @@
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="    ">
+                            <fragment content="     ">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="38" name="HelveticaNeue"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="PQRS">
+                            <fragment content="P Q R S">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="9" name="HelveticaNeue"/>
@@ -627,14 +627,14 @@
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="    ">
+                            <fragment content="     ">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="38" name="HelveticaNeue"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="TUV">
+                            <fragment content="T U V">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="9" name="HelveticaNeue"/>
@@ -695,14 +695,14 @@
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="    ">
+                            <fragment content="     ">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="38" name="HelveticaNeue"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="WXYZ">
+                            <fragment content="W X Y Z">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.39215686274509803" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="9" name="HelveticaNeue"/>
