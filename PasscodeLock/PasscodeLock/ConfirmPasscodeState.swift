@@ -10,24 +10,26 @@ import Foundation
 
 struct ConfirmPasscodeState: PasscodeLockStateType {
     
-    let title: String
-    let description: String
+    let title				: String
+    let description			: String
     let isCancellableAction = true
-    var isTouchIDAllowed = false
+    var isTouchIDAllowed 	= false
+	var tintColor			: UIColor?
     
     private var passcodeToConfirm: [String]
     
-	init(passcode: [String], stringsToShow: StringsToBeDisplayed?) {
-        
-        passcodeToConfirm = passcode
-        title = (stringsToShow?.passcodeLockConfirmTitle ?? localizedStringFor("PasscodeLockConfirmTitle", comment: "Confirm passcode title"))
-        description = (stringsToShow?.passcodeLockConfirmDescription ?? localizedStringFor("PasscodeLockConfirmDescription", comment: "Confirm passcode description"))
+	init(passcode: [String], stringsToShow: StringsToBeDisplayed?, tintColor: UIColor?) {
+
+		let defaultColor = UIColor(red: 0, green: 100/255, blue: 165/255, alpha: 1)
+        self.passcodeToConfirm = passcode
+        self.title = (stringsToShow?.passcodeLockConfirmTitle ?? localizedStringFor("PasscodeLockConfirmTitle", comment: "Confirm passcode title"))
+        self.description = (stringsToShow?.passcodeLockConfirmDescription ?? localizedStringFor("PasscodeLockConfirmDescription", comment: "Confirm passcode description"))
+		self.tintColor = (tintColor ?? defaultColor)
     }
     
-	func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType, stringsToShow: StringsToBeDisplayed?) {
+	func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType, stringsToShow: StringsToBeDisplayed?, tintColor: UIColor?) {
         
-        if passcode == passcodeToConfirm {
-            
+        if (passcode == passcodeToConfirm) {
             lock.repository.savePasscode(passcode)
             lock.delegate?.passcodeLockDidSucceed(lock)
         
@@ -35,9 +37,7 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
             
             let mismatchTitle = (stringsToShow?.passcodeLockMismatchTitle ?? localizedStringFor("PasscodeLockMismatchTitle", comment: "Passcode mismatch title"))
             let mismatchDescription = (stringsToShow?.passcodeLockMismatchDescription ?? localizedStringFor("PasscodeLockMismatchDescription", comment: "Passcode mismatch description"))
-            
             let nextState = SetPasscodeState(title: mismatchTitle, description: mismatchDescription)
-            
             lock.changeStateTo(nextState)
             lock.delegate?.passcodeLockDidFail(lock)
         }
