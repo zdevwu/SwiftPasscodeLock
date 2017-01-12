@@ -293,6 +293,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
 		let titleForButton = ((self.passcodeLock.state.isCancellableAction == true) ? cancelButton : (self.stringsToShow?.delete ?? localizedStringFor("Delete", comment: "")))
 		self.cancelDeleteButton?.setTitle(titleForButton, forState: .Normal)
 		self.cancelDeleteButton?.setTitleColor(self.customTintColor, forState: .Normal)
+		self.cancelDeleteButton?.setTitleColor(self.customTintColor?.colorWithAlphaComponent(0.5), forState: .Disabled)
 		self.cancelDeleteButton?.titleLabel?.font = self.font
 
 		if (self.passcodeLock.isPincodeEmpty == true && self.passcodeLock.state.isCancellableAction == false) {
