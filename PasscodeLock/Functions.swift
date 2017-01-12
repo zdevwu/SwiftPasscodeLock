@@ -24,3 +24,7 @@ func bundleForResource(name: String, ofType type: String) -> NSBundle {
     
     return NSBundle(forClass: PasscodeLock.self)
 }
+
+func defaultCustomColor() -> UIColor {
+	return UIColor(red: 0, green: 100/255, blue: 165/255, alpha: 1)
+}
