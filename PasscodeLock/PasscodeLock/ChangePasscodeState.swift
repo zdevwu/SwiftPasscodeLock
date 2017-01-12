@@ -19,7 +19,8 @@ struct ChangePasscodeState: PasscodeLockStateType {
 
 	init(stringsToShow: StringsToBeDisplayed?, tintColor: UIColor?, font: UIFont?) {
 
-		let defaultColor = UIColor(red: 0, green: 100/255, blue: 165/255, alpha: 1)
+
+		let defaultColor = defaultCustomColor()
         self.title = (stringsToShow?.passcodeLockChangeTitle ?? localizedStringFor("PasscodeLockChangeTitle", comment: "Change passcode title"))
         self.description = (stringsToShow?.passcodeLockChangeDescription ?? localizedStringFor("PasscodeLockChangeDescription", comment: "Change passcode description"))
 		self.tintColor = (tintColor ?? defaultColor)

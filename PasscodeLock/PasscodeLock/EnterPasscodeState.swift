@@ -24,7 +24,7 @@ struct EnterPasscodeState: PasscodeLockStateType {
     
 	init(allowCancellation: Bool = false, stringsToShow: StringsToBeDisplayed?, tintColor: UIColor?, font: UIFont?) {
 
-		let defaultColor = UIColor(red: 0, green: 100/255, blue: 165/255, alpha: 1)
+		let defaultColor = defaultCustomColor()
         self.isCancellableAction = allowCancellation
         self.title = (stringsToShow?.passcodeLockEnterTitle ?? localizedStringFor("PasscodeLockEnterTitle", comment: "Enter passcode title"))
         self.description = (stringsToShow?.passcodeLockEnterDescription ?? localizedStringFor("PasscodeLockEnterDescription", comment: "Enter passcode description"))

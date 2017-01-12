@@ -21,7 +21,7 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
     
 	init(passcode: [String], stringsToShow: StringsToBeDisplayed?, tintColor: UIColor?, font: UIFont?) {
 
-		let defaultColor = UIColor(red: 0, green: 100/255, blue: 165/255, alpha: 1)
+		let defaultColor = defaultCustomColor()
         self.passcodeToConfirm = passcode
         self.title = (stringsToShow?.passcodeLockConfirmTitle ?? localizedStringFor("PasscodeLockConfirmTitle", comment: "Confirm passcode title"))
         self.description = (stringsToShow?.passcodeLockConfirmDescription ?? localizedStringFor("PasscodeLockConfirmDescription", comment: "Confirm passcode description"))
