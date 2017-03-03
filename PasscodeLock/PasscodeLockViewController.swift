@@ -120,7 +120,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         self.descriptionLabel?.text = passcodeLock.state.description
         self.touchIDButton?.hidden = !passcodeLock.isTouchIDAllowed
 		self.touchIDButton?.setTitle((self.stringsToShow?.useTouchID ?? localizedStringFor("UseTouchId", comment: "")), forState: .Normal)
-
+		self.touchIDButton?.setTitleColor(self.customTintColor, forState: .Normal)
 		self.passcodeButtons?.forEach({ (passcodeButton: PasscodeSignButton) in
 			passcodeButton.tintColor = self.customTintColor
 		})
