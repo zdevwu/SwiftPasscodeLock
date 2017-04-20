@@ -82,7 +82,7 @@ public class PasscodeLockPresenter {
         self.init(mainWindow: window, configuration: configuration, viewController: passcodeLockVC)
     }
     
-	public func presentPasscodeLock(withImage image: UIImage? = nil, andStrings stringsToShow: StringsToBeDisplayed? = nil, tintColor: UIColor?, font: UIFont?, dismissCompletionBlock: (() -> Void)? = nil) {
+	public func presentPasscodeLock(withImage image: UIImage? = nil, configuration config: PasscodeLockConfigurationType? = nil, andStrings stringsToShow: StringsToBeDisplayed? = nil, tintColor: UIColor?, font: UIFont?, dismissCompletionBlock: (() -> Void)? = nil) {
         
         guard passcodeConfiguration.repository.hasPasscode else { return }
         guard !isPasscodePresented else { return }
@@ -95,7 +95,7 @@ public class PasscodeLockPresenter {
         mainWindow?.windowLevel = 1
         mainWindow?.endEditing(true)
 
-		let passcodeLockVC = PasscodeLockViewController(state: .EnterPasscode, configuration: passcodeConfiguration, stringsToShow: stringsToShow, tintColor: tintColor, font: font)
+		let passcodeLockVC = PasscodeLockViewController(state: .EnterPasscode, configuration: (config ?? passcodeConfiguration), stringsToShow: stringsToShow, tintColor: tintColor, font: font)
 		if (image != nil) {
 			passcodeLockVC.customImage = image
 		}
