@@ -20,7 +20,6 @@ struct EnterPasscodeState: PasscodeLockStateType {
 	var font				: UIFont?
     
     private var inccorectPasscodeAttempts = 0
-    private var isNotificationSent = false
     
 	init(allowCancellation: Bool = false, stringsToShow: StringsToBeDisplayed?, tintColor: UIColor?, font: UIFont?) {
 
@@ -53,11 +52,8 @@ struct EnterPasscodeState: PasscodeLockStateType {
     }
     
     private mutating func postNotification() {
-        
-        guard !isNotificationSent else { return }
-            
+
         let center = NSNotificationCenter.defaultCenter()
         center.postNotificationName(PasscodeLockIncorrectPasscodeNotification, object: nil)
-        self.isNotificationSent = true
     }
 }
