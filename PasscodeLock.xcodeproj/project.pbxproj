@@ -35,7 +35,6 @@
 		C9DC07F01B90C8E1007A4DD0 /* FakePasscodeLockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC07EF1B90C8E1007A4DD0 /* FakePasscodeLockDelegate.swift */; };
 		C9DC07F21B90C9DE007A4DD0 /* EnterPasscodeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC07F11B90C9DE007A4DD0 /* EnterPasscodeState.swift */; };
 		C9DC07F81B90CF29007A4DD0 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC07F71B90CF29007A4DD0 /* Functions.swift */; };
-		C9DC07F91B90CF29007A4DD0 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC07F71B90CF29007A4DD0 /* Functions.swift */; };
 		C9DC07FF1B90D24A007A4DD0 /* SetPasscodeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC07FE1B90D24A007A4DD0 /* SetPasscodeState.swift */; };
 		C9DC08021B90D2BA007A4DD0 /* ConfirmPasscodeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC08011B90D2BA007A4DD0 /* ConfirmPasscodeState.swift */; };
 		C9DC08051B90D394007A4DD0 /* ChangePasscodeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DC08041B90D394007A4DD0 /* ChangePasscodeState.swift */; };
@@ -571,7 +570,6 @@
 				C9DC07EE1B90C7CD007A4DD0 /* FakePasscodeLockConfiguration.swift in Sources */,
 				C9DC080C1B90DC38007A4DD0 /* SetPasscodeStateTests.swift in Sources */,
 				C9DC08081B90DAE6007A4DD0 /* EnterPasscodeStateTests.swift in Sources */,
-				C9DC07F91B90CF29007A4DD0 /* Functions.swift in Sources */,
 				C9DC080A1B90DB09007A4DD0 /* FakePasscodeLock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

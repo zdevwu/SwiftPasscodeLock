@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-@testable import PasscodeLock
 
 func localizedStringFor(_ key: String, comment: String) -> String {
     
