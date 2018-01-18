@@ -122,18 +122,21 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         self.touchIDButton?.isHidden = !passcodeLock.isTouchIDAllowed
 
 		var useBiometrics: String = ""
+		var useBiomatricsToShow: String?
 		if #available(iOS 11.0, *) {
 			let context = LAContext()
 			context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
 			let bioType = context.biometryType
 			if (bioType == .touchID) {
 				useBiometrics = localizedStringFor("UseTouchId", comment: "")
+				useBiomatricsToShow = self.stringsToShow?.useTouchID
 			} else if (bioType == .faceID) {
 				useBiometrics = localizedStringFor("UseFaceId", comment: "")
+				useBiomatricsToShow = self.stringsToShow?.useFaceID
 			}
 		}
 
-		self.touchIDButton?.setTitle((self.stringsToShow?.useTouchID ?? useBiometrics), for: UIControlState())
+		self.touchIDButton?.setTitle((useBiomatricsToShow ?? useBiometrics), for: UIControlState())
 		self.passcodeButtons?.forEach({ (passcodeButton: PasscodeSignButton) in
 			passcodeButton.tintColor = self.customTintColor
 		})
