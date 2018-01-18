@@ -121,16 +121,13 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         self.descriptionLabel?.text = passcodeLock.state.description
         self.touchIDButton?.isHidden = !passcodeLock.isTouchIDAllowed
 
-		var useBiometrics: String = ""
-		var useBiomatricsToShow: String?
+		var useBiometrics: String = localizedStringFor("UseTouchId", comment: "")
+		var useBiomatricsToShow: String? = self.stringsToShow?.useTouchID
 		if #available(iOS 11.0, *) {
 			let context = LAContext()
 			context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
 			let bioType = context.biometryType
-			if (bioType == .touchID) {
-				useBiometrics = localizedStringFor("UseTouchId", comment: "")
-				useBiomatricsToShow = self.stringsToShow?.useTouchID
-			} else if (bioType == .faceID) {
+			if (bioType == .faceID) {
 				useBiometrics = localizedStringFor("UseFaceId", comment: "")
 				useBiomatricsToShow = self.stringsToShow?.useFaceID
 			}
