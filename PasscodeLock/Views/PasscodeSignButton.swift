@@ -8,14 +8,14 @@
 
 import UIKit
 
-public class PasscodeSignButton: UIButton {
-    
-    public var passcodeSign: String = "1"
-	public var customTintColor: UIColor? = UIColor(red: 0, green: 100/255, blue: 165/255, alpha: 1)
+@IBDesignable public class PasscodeSignButton: UIButton {
 
-	public override func awakeFromNib() {
-		super.awakeFromNib()
+    @IBInspectable public var passcodeSign: String!
+    public var customTintColor: UIColor? = UIColor(red: 0, green: 100 / 255, blue: 165 / 255, alpha: 1)
 
-		self.tintColor = customTintColor
-	}
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+
+        self.tintColor = customTintColor
+    }
 }

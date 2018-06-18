@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol PasscodeLockStateType {
     
@@ -16,5 +17,4 @@ public protocol PasscodeLockStateType {
     var isTouchIDAllowed	: Bool 		{get}
 	var tintColor			: UIColor? 	{get}
     
-	mutating func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType, stringsToShow: StringsToBeDisplayed?, tintColor: UIColor?, font: UIFont?)
 }

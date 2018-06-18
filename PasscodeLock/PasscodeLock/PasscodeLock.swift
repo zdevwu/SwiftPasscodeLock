@@ -8,6 +8,7 @@
 
 import Foundation
 import LocalAuthentication
+import UIKit
 
 public class PasscodeLock: PasscodeLockType {
     
@@ -41,15 +42,63 @@ public class PasscodeLock: PasscodeLockType {
         self.configuration = configuration
     }
     
-	public func addSign(sign: String, stringsToBeDisplayed: StringsToBeDisplayed?, tintColor: UIColor?, font: UIFont?) {
+	public func addSign(_ sign: String, stringsToBeDisplayed: StringsToBeDisplayed?, tintColor: UIColor?, font: UIFont?) {
         
         passcode.append(sign)
         delegate?.passcodeLock(self, addedSignAtIndex: passcode.count - 1)
         
         if (passcode.count >= configuration.passcodeLength) {
 
-			self.lockState.acceptPasscode(self.passcode, fromLock: self, stringsToShow: stringsToBeDisplayed, tintColor: tintColor, font: font)
-			self.passcode.removeAll(keepCapacity: true)
+            if var state = self.lockState as? EnterPasscodeState {
+                if let currentPasscode = repository.passcode {
+
+                    if (passcode == currentPasscode) {
+                        delegate?.passcodeLockDidSucceed(self)
+
+                    } else {
+
+                        state.inccorectPasscodeAttempts += 1
+                        if (state.inccorectPasscodeAttempts >= configuration.maximumInccorectPasscodeAttempts) {
+                            state.postNotification()
+                        }
+
+                        delegate?.passcodeLockDidFail(self)
+                    }
+                }
+            } else if var state = self.lockState as? SetPasscodeState {
+
+                let nextState = ConfirmPasscodeState(passcode: passcode, stringsToShow: stringsToBeDisplayed, tintColor: tintColor, font: font)
+                changeStateTo(nextState)
+
+            } else if var state = self.lockState as? ChangePasscodeState {
+
+                if let currentPasscode = repository.passcode {
+                    if (passcode == currentPasscode) {
+                        let nextState = SetPasscodeState(stringsToShow: stringsToBeDisplayed, tintColor: tintColor, font: font)
+                        changeStateTo(nextState)
+
+                    } else {
+                        delegate?.passcodeLockDidFail(self)
+                    }
+                }
+
+            } else if var state = self.lockState as? ConfirmPasscodeState {
+
+                if (passcode == state.passcodeToConfirm) {
+                    repository.savePasscode(passcode)
+                    delegate?.passcodeLockDidSucceed(self)
+
+                } else {
+
+                    let mismatchTitle = (stringsToBeDisplayed?.passcodeLockMismatchTitle ?? localizedStringFor("PasscodeLockMismatchTitle", comment: "Passcode mismatch title"))
+                    let mismatchDescription = (stringsToBeDisplayed?.passcodeLockMismatchDescription ?? localizedStringFor("PasscodeLockMismatchDescription", comment: "Passcode mismatch description"))
+                    let nextState = SetPasscodeState(title: mismatchTitle, description: mismatchDescription, tintColor: tintColor, font: font)
+                    changeStateTo(nextState)
+                    delegate?.passcodeLockDidFail(self)
+                }
+            }
+
+			self.passcode.removeAll(keepingCapacity: true)
         }
     }
     
@@ -61,13 +110,13 @@ public class PasscodeLock: PasscodeLockType {
         delegate?.passcodeLock(self, removedSignAtIndex: passcode.count)
     }
     
-    public func changeStateTo(state: PasscodeLockStateType) {
+    public func changeStateTo(_ state: PasscodeLockStateType) {
         
         lockState = state
         delegate?.passcodeLockDidChangeState(self)
     }
     
-	public func authenticateWithBiometrics(stringsToShow: StringsToBeDisplayed?) {
+	public func authenticateWithBiometrics(_ stringsToShow: StringsToBeDisplayed?) {
         
         guard isTouchIDAllowed else { return }
         
@@ -76,28 +125,27 @@ public class PasscodeLock: PasscodeLockType {
 
         context.localizedFallbackTitle = (stringsToShow?.passcodeLockTouchIDButton ?? localizedStringFor("PasscodeLockTouchIDButton", comment: "TouchID authentication fallback button"))
         
-        context.evaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
             success, error in
             
             self.handleTouchIDResult(success)
         }
     }
     
-    private func handleTouchIDResult(success: Bool) {
-        
-        dispatch_async(dispatch_get_main_queue()) {
-            
+    private func handleTouchIDResult(_ success: Bool) {
+
+        DispatchQueue.main.async(execute: {
             if success {
                 
                 self.delegate?.passcodeLockDidSucceed(self)
             }
-        }
+        })
     }
     
     private func isTouchIDEnabled() -> Bool {
         
         let context = LAContext()
         
-        return context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: nil)
+        return context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
     }
 }

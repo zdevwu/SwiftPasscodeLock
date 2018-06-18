@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct ConfirmPasscodeState: PasscodeLockStateType {
     
@@ -17,7 +18,7 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
 	var tintColor			: UIColor?
 	var font				: UIFont?
     
-    private var passcodeToConfirm: [String]
+    var passcodeToConfirm: [String]
     
 	init(passcode: [String], stringsToShow: StringsToBeDisplayed?, tintColor: UIColor?, font: UIFont?) {
 
@@ -26,22 +27,7 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
         self.title = (stringsToShow?.passcodeLockConfirmTitle ?? localizedStringFor("PasscodeLockConfirmTitle", comment: "Confirm passcode title"))
         self.description = (stringsToShow?.passcodeLockConfirmDescription ?? localizedStringFor("PasscodeLockConfirmDescription", comment: "Confirm passcode description"))
 		self.tintColor = (tintColor ?? defaultColor)
-		self.font = (font ?? UIFont.systemFontOfSize(16))
+		self.font = (font ?? UIFont.systemFont(ofSize: 16))
     }
     
-	func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType, stringsToShow: StringsToBeDisplayed?, tintColor: UIColor?, font: UIFont?) {
-        
-        if (passcode == passcodeToConfirm) {
-            lock.repository.savePasscode(passcode)
-            lock.delegate?.passcodeLockDidSucceed(lock)
-        
-        } else {
-            
-            let mismatchTitle = (stringsToShow?.passcodeLockMismatchTitle ?? localizedStringFor("PasscodeLockMismatchTitle", comment: "Passcode mismatch title"))
-            let mismatchDescription = (stringsToShow?.passcodeLockMismatchDescription ?? localizedStringFor("PasscodeLockMismatchDescription", comment: "Passcode mismatch description"))
-			let nextState = SetPasscodeState(title: mismatchTitle, description: mismatchDescription, tintColor: tintColor, font: font)
-            lock.changeStateTo(nextState)
-            lock.delegate?.passcodeLockDidFail(lock)
-        }
-    }
 }
