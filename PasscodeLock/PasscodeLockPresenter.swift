@@ -70,7 +70,6 @@ public class PasscodeLockPresenter {
     public init(mainWindow window: UIWindow?, configuration: PasscodeLockConfigurationType, viewController: PasscodeLockViewController) {
         
         mainWindow = window
-        mainWindow?.windowLevel = 1
         passcodeConfiguration = configuration
         passcodeLockVC = viewController
     }
@@ -89,10 +88,9 @@ public class PasscodeLockPresenter {
         
         isPasscodePresented = true
         
-        passcodeLockWindow.windowLevel = 2
+        passcodeLockWindow.windowLevel = UIWindowLevelStatusBar
         passcodeLockWindow.hidden = false
-        
-        mainWindow?.windowLevel = 1
+
         mainWindow?.endEditing(true)
 
 		let passcodeLockVC = PasscodeLockViewController(state: .EnterPasscode, configuration: (config ?? passcodeConfiguration), stringsToShow: stringsToShow, tintColor: tintColor, font: font)
@@ -114,7 +112,6 @@ public class PasscodeLockPresenter {
     public func dismissPasscodeLock(animated animated: Bool = true) {
         
         isPasscodePresented = false
-        mainWindow?.windowLevel = 1
         mainWindow?.makeKeyAndVisible()
         
         if animated {
